@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart'; // Pastikan import splash screen
+import 'login_page.dart';
+import 'dashboard_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SplashScreen(), // Splash Screen sebagai halaman awal
+      title: 'Property Demo App',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/dashboard': (context) => DashboardPage(),
+      },
     );
   }
 }
